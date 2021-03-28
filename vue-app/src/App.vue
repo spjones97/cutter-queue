@@ -1,17 +1,30 @@
 <template>
-  <div>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="container">
+    
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CutterHeader from "./components/CutterHeader";
+import CutterTable from "./components/CutterTable";
+import LaserQueue from "./components/LaserQueue";
+import OnQueueHeader from "./components/OnQueueHeader";
+import OnQueueTable from "./components/OnQueueTable";
+import QueueHeader from "./components/QueueHeader";
+import SignUpForm from "./components/SignUpForm";
+import SignUpHeader from "./components/SignUpHeader";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    CutterHeader,
+    CutterTable,
+    LaserQueue,
+    OnQueueHeader,
+    OnQueueTable,
+    QueueHeader,
+    SignUpForm,
+    SignUpHeader
   }
 }
 </script>
