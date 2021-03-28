@@ -1,13 +1,33 @@
 <template>
   <div class="container">
-    
+    <div class="card">
+      <!-- Main Header -->
+      <h1 class="card-header main-header" style="text-align: center;">
+        <img style="margin-right: 55px;" src="./assets/beam-logo.png" alt="">
+        LASER CUTTER QUEUE
+      </h1>
+
+      <!-- Queue Header -->
+      <QueueHeader />
+
+      <!-- On Cutter -->
+      <CutterHeader />
+      <CutterTable />
+
+      <!-- Sign Up Form -->
+      <SignUpHeader />
+      <SignUpForm />
+
+      <!-- On Queue -->
+      <OnQueueHeader />
+      <OnQueueTable />
+    </div>
   </div>
 </template>
 
 <script>
 import CutterHeader from "./components/CutterHeader";
 import CutterTable from "./components/CutterTable";
-import LaserQueue from "./components/LaserQueue";
 import OnQueueHeader from "./components/OnQueueHeader";
 import OnQueueTable from "./components/OnQueueTable";
 import QueueHeader from "./components/QueueHeader";
@@ -19,7 +39,6 @@ export default {
   components: {
     CutterHeader,
     CutterTable,
-    LaserQueue,
     OnQueueHeader,
     OnQueueTable,
     QueueHeader,
