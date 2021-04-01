@@ -7,12 +7,12 @@
         LASER CUTTER QUEUE
       </h1>
 
-      <!-- Queue Header -->
-      <QueueHeader />
-
       <!-- On Cutter -->
       <CutterHeader />
       <CutterTable />
+
+      <!-- Queue Header -->
+      <QueueHeader />
 
       <!-- Sign Up Form -->
       <SignUpHeader />
