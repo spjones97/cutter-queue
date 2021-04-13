@@ -1,6 +1,14 @@
 <template>
   <div class="container">
     <div class="card">
+      <!-- Import Bootstrap -->
+      <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous"
+      />
+
       <!-- Main Header -->
       <h1 class="card-header main-header" style="text-align: center;">
         <img style="margin-right: 55px;" src="./assets/beam-logo.png" alt="">
@@ -44,6 +52,13 @@ export default {
     QueueHeader,
     SignUpForm,
     SignUpHeader
+  },
+  data() {
+    return {
+      onQueue: [],
+      onCutter: [],
+      timeIn: []
+    }
   }
 }
 </script>
