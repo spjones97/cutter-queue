@@ -10,25 +10,36 @@
       />
 
       <!-- Main Header -->
-      <h1 class="card-header main-header" style="text-align: center;">
-        <img style="margin-right: 55px;" src="./assets/beam-logo.png" alt="">
-        LASER CUTTER QUEUE
-      </h1>
+      <QueueHeader />
 
       <!-- On Cutter -->
-      <CutterHeader />
-      <CutterTable />
-
-      <!-- Queue Header -->
-      <QueueHeader />
+      <CutterHeader
+        v-bind:onCutterRows="onQueue" 
+      />
+      <CutterTable 
+        :onCutterRows="onCutter"
+        :timeOnRows="timeOn"
+        :timeRows="times"
+        :cutTimeRows="cutTimes"
+      />
 
       <!-- Sign Up Form -->
       <SignUpHeader />
-      <SignUpForm />
+      <SignUpForm 
+        :onQueueRows="onQueue"
+        :timeInRows="timeIn"
+      />
 
       <!-- On Queue -->
       <OnQueueHeader />
-      <OnQueueTable />
+      <OnQueueTable v-if="this.onQueue.length > 0"
+        :onQueueRows="onQueue"
+        :timeInRows="timeIn"
+        :onCutterRows="onCutter"
+        :timeOnRows="timeOn"
+        :timeRows="times"
+        :time="time"
+      />
     </div>
   </div>
 </template>
@@ -41,6 +52,9 @@ import OnQueueTable from "./components/OnQueueTable";
 import QueueHeader from "./components/QueueHeader";
 import SignUpForm from "./components/SignUpForm";
 import SignUpHeader from "./components/SignUpHeader";
+
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 export default {
   name: 'App',
@@ -57,7 +71,11 @@ export default {
     return {
       onQueue: [],
       onCutter: [],
-      timeIn: []
+      timeIn: [],
+      timeOn: [],
+      times: [],
+      cutTimes: [],
+      time: 0
     }
   }
 }

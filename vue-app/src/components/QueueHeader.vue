@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="card-header main-header header">
-      <slot></slot>
+      LASER CUTTER QUEUE
     </h1>
   </div>
 </template>

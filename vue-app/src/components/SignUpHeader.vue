@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 class="sign-header">
-      <slot></slot>
+      Sign In
     </h2>
   </div>
 </template>

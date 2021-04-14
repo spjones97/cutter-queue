@@ -44,6 +44,11 @@
                 required: true
             }
         },
+        data() {
+            return {
+
+            }
+        },
         methods: {
             getCutterName: function (index) {
                 return this.onCutterRows[index];
@@ -60,6 +65,9 @@
                 this.cutTimeRows.splice(index, 1);
                 this.timeRows.splice(index, 1);
             }
+        },
+        computed: {
+            
         }
     }
 </script>

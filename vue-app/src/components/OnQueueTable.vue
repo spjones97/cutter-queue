@@ -59,6 +59,11 @@ export default {
         },
         time: Number
     },
+    data() {
+        return {
+
+        }
+    },
     methods: {
         getQueueName: function (index) {
             return this.onQueueRows[index];
@@ -79,6 +84,9 @@ export default {
             this.timeInRows.splice(index, 1);
             this.onCutterRows.splice();
         }
+    },
+    computed: {
+        
     }
 }
 </script>

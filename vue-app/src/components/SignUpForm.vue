@@ -25,8 +25,6 @@
 <script>
 export default {
     props: {
-        firstName: String,
-        lastName: String,
         onQueueRows: {
             type: Array,
             required: true
@@ -36,16 +34,27 @@ export default {
             required: true
         }
     },
+    data() {
+        return {
+            firstName: String,
+            lastName: String,
+            queue: this.onQueueRows,
+            times: this.timeInRows
+        }
+    },
     methods: {
         addToQueue: function (first, last) {
             var name = first + " " + last;
-            this.onQueueRows[this.onQueueRows.length] = name;
+            this.queue[this.queue.length] = name;
 
             var today = new Date();
-            this.timeInRows[this.timeInRows.length] = today.toLocaleTimeString();
-            this.onQueueRows.splice();
-            this.timeInRows.splice();
+            this.times[this.times.length] = today.toLocaleTimeString();
+            this.queue.splice();
+            this.times.splice();
         }
+    },
+    computed: {
+
     }
 }
 </script>

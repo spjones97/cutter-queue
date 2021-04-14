@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="on-queue-header">
-      <slot></slot>
+      On Queue
     </h3>
   </div>
 </template>

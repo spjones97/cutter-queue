@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h3 v-cloak v-if="onCutterRows.length > 0" class="cutter-header">
-            <slot></slot>
+        <h3 v-cloak v-if="1 == 1/* this.cutter.length > 0 */" class="cutter-header">
+            On Cutter
         </h3>
     </div>
 </template>
@@ -12,6 +12,11 @@
             onCutterRows: {
                 type: Array,
                 required: true
+            }
+        },
+        data() {
+            return {
+                cutter: this.onCutterRows
             }
         }
     }
