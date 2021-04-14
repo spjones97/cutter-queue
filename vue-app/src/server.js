@@ -49,7 +49,7 @@ finale.initialize({
 
 let userResource = finale.resource({
     model: User,
-    endpoints: ['/users', '/posts/:id']
+    endpoints: ['/users', '/users/:id']
 })
 
 database
