@@ -7,9 +7,11 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>#</th>
                             <th>Name</th>
                             <th>Updated At</th>
+                            <th>Checks</th>
+                            <th>Level</th>
                             <th>&nbsp;</th>
                         </tr>
                     </thead>
@@ -17,7 +19,23 @@
                         <tr v-for="user in users" :key="user.id">
                             <td>{{ user.id }}</td>
                             <td>{{ user.name }}</td>
-                            <td>{{ user.updatedAt }}</td>
+                            <td>{{ dateFormatter(user.updatedAt) }}</td>
+                            <td>
+                                <input type="checkbox" id="checkOne">
+                                <label for="checkOne">#1</label>
+                                <input type="checkbox" id="checkTwo">
+                                <label for="checkTwo">#2</label>
+                                <input type="checkbox" id="checkThree">
+                                <label for="checkThree">#3</label>
+                            </td>
+                            <td>
+                                <select class="form-control">
+                                    <option></option>
+                                    <option>Waiting for Checks</option>
+                                    <option>Checks Completed</option>
+                                    <option>On Cutter</option>
+                                </select>
+                            </td>
                             <td class="text-right">
                                 <a href="#" @click.prevent="populateUserToEdit(user)">Edit</a> -
                                 <a href="#" @click.prevent="deleteUser(user.id)">Delete</a>
@@ -85,6 +103,10 @@ export default {
                 await api.deleteUser(id)
                 await this.refreshUsers()
             }
+        },
+        dateFormatter (date) {
+            var d = new Date(date)
+            return d.toLocaleTimeString()
         }
     }
 }
