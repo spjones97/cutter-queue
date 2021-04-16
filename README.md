@@ -1,4 +1,4 @@
-# University of North Carolina BeAM Laser Cutter Queue
+# UNC-CH BeAM Laser Cutter Queue
 
 ### Technology
 
