@@ -5,14 +5,15 @@
   "author": "Spencer <sjones97@email.unc.edu>",
   "private": true,
   "scripts": {
-    "dev": "node build/dev-server.js",
+    "dev": "concurrently \"node build/dev-server.js\" \"node ./src/server.js\"",
     "backend": "node ./src/server.js",
-    "start": "node build/dev-server.js",
+    "start": "concurrently \"node build/dev-server.js\" \"node ./src/server.js\"",
     "build": "node build/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
-    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
+    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
+    "deploy": "concurrently \"node build/dev-server.js\" \"node ./src/server.js\""
   },
   "dependencies": {
     "@okta/jwt-verifier": "^2.1.0",
@@ -21,6 +22,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
     "bootstrap-vue": "^2.21.2",
+    "concurrently": "^6.0.2",
     "cors": "^2.8.5",
     "finale-rest": "^1.1.1",
     "sequelize": "^6.6.2",
