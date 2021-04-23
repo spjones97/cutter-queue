@@ -5,6 +5,8 @@ const Sequelize = require('sequelize')
 const finale = require('finale-rest')
 const OktaJwtVerifier = require('@okta/jwt-verifier')
 
+var PORT = process.env.PORT || 8081;
+
 const oktaJwtVerifier = new OktaJwtVerifier({
     clientId: '0oal3rkv5hHbjO0ey5d6',
     issuer: 'https://dev-10307142.okta.com/oauth2/default'
@@ -55,7 +57,7 @@ let userResource = finale.resource({
 database
     .sync({ force: true })
     .then(() => {
-        app.listen(8081, () => {
-            console.log('listening on port localhost:8081')
+        app.listen(PORT, () => {
+            console.log(`listening on port localhost:${PORT}`)
         })
     })
