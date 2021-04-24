@@ -5,7 +5,7 @@ const Sequelize = require('sequelize')
 const finale = require('finale-rest')
 const OktaJwtVerifier = require('@okta/jwt-verifier')
 
-var PORT = process.env.PORT || 8081;
+var PORT = process.env.PORT || 8080;
 
 const oktaJwtVerifier = new OktaJwtVerifier({
     clientId: '0oal3rkv5hHbjO0ey5d6',
